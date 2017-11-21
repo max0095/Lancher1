@@ -1,0 +1,229 @@
+﻿
+@{
+    ViewBag.Title = "FirstPage";
+    Layout = null;
+}
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    .Head_bar {
+        background-color: black;
+        width: 100%;
+        height:18%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+
+    .img_Profile {
+        background-color: black;
+    }
+
+    .Text_Profile {
+        background-color: black;
+    }
+
+    .Top.row {
+        margin-top: -0.5%;
+    }
+
+    .Icon_all {
+        height: 700px;
+        background-color: rgb(240,240,240);
+    }
+
+    .Home_icon, .Icon_profile, .Resume_icon, .Lobby, .Post {
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+        padding-left: 20%;
+    }
+
+        .Home_icon:hover {
+            background-color: #555;
+        }
+
+        .Icon_profile:hover {
+            background-color: #555;
+        }
+
+        .Resume_icon:hover {
+            background-color: #555;
+        }
+
+        .Lobby:hover {
+            background-color: #555;
+        }
+
+        .Post:hover {
+            background-color: #555;
+        }
+
+    #QQ {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-left: 25%;
+    }
+
+    .Kuy {
+        margin-left: 3%;
+    }
+
+    .Home_Cosana {
+        width: 70%;
+        margin-top: 2%;
+    }
+
+    .Home_New {
+        margin-left: 1%;
+        width: 26%;
+        border-left: solid;
+    }
+
+    .rigth.col-md-10.row {
+    }
+
+    .New {
+        margin-left: 5%;
+        margin-top: 3%;
+    }
+
+    .Hot {
+        margin-left: 3%;
+    }
+
+    .pioop {
+        margin-left: 2%;
+        margin-top: 3%;
+    }
+
+    .ssssasa {
+        border: solid;
+        width: 200px;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        margin-right: 3%;
+        margin-left: 3%;
+    }
+
+    .btn.btn-primary {
+        margin-left: 52%;
+    }
+
+    #spo, #spos {
+        width: 90%;
+        height: 30%;
+        margin-left: 10%;
+    }
+
+    .totot {
+        padding-top: 6%;
+        margin-left: 2%;
+    }
+
+    #posdps, #posdpss {
+        margin-left: 85%;
+        margin-bottom: 8%;
+    }
+
+    .dspds {
+        border-bottom: solid;
+        margin-left: 8%;
+        padding-top: 8%;
+    }
+
+    #sdsdsdsd {
+        margin-left: 20%;
+    }
+
+    .dsdsdsds {
+        margin-top: 5%;
+        margin-left: 30%;
+    }
+
+    .btn.btn-primary {
+        margin-left: 180%;
+    }
+
+    .eieie {
+        padding-bottom: 2%;
+    }
+</style>
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/…/…/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/…/4.0…/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/…/pop…/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/…/4.0.0…/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<div class="Head_bar">
+    <div><a class="sssss" href="Home.aspx" style="text-decoration:none"><h1 class="Kuy">Lancher</h1></a></div>
+</div>
+<div class="Top row">
+    <div class="left col-md-2">
+        <div class="img_Profile">
+            <center><img id="Image1" width="100" height="100" /></center>
+            <center><label id="User_pop"></label></center>
+</div>
+        <div class="Text_Profile">
+            <center class="eieie"><asp:Label ID="Useremail" runat="server" Text="Label" ForeColor="#3333FF"></asp:Label></center>
+        </div>
+        <div class="Icon_all">
+            <div class="Home_icon">
+                <img src="~/Image/Graphicloads-100-Flat-Home.ico" width="50" height="50"/>&nbsp; <a href="Home.aspx" style="text-decoration:none">Home</a>
+            </div>
+            <div class="Icon_profile">
+                <img alt="" src="~/Image/20161014_58006bff8b1de.png" width="50" height="50" />&nbsp; <a href="User_pro.aspx" style="text-decoration:none">My job</a>
+            </div>
+            <div class="Resume_icon">
+                <img alt="" src="~/Image/file-text-icon.png" width="50" height="50" />&nbsp; <a href="Resume.aspx" style="text-decoration:none">Resume</a>
+            </div>
+            <div class="Lobby">
+                <img alt="" src="~/Image/MSB_Icon_Job_green.png" width="50" height="50" />&nbsp; <a href="Lobby.aspx" style="text-decoration:none">Lobby</a>
+            </div>
+            <div class="Post">
+                <img alt="" src="~/Image/Facebook-Messenger-Icon.png" width="50" height="50" />&nbsp; <a href="Post.aspx" style="text-decoration:none">Post</a>
+            </div>
+        </div>
+    </div>
+    <div class="rigth col-md-10 row">
+        <div class="Home_Cosana">
+            <div class="popsss row">
+                <h1 class="Hot">Hot</h1><img alt="" src="Emoji_u1f525.svg.png" width="50" height="50" />
+            </div>
+            <div class="ttt row">
+                <div class="lok col-md-9 row">
+                    <img id="sdsdsdsd" alt="" src="diy_banner_final.png" />
+                    <div class="polkko col-md-8">
+                        <div class="dsdsdsds">
+                            The good, the bad and the ugly! Some are great, others not so much. This is a gallery of infographic resume designs from around the world. If you know of a resume I should include, send me the link through the Cool Infographics Contact Page
+                            <button id="sssdsa" type="button" class="btn btn-primary">Detail</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Home_New">
+            <div class="dspds">
+                <h1 class="New">News</h1>
+                <img id="spo" alt="" src="logo-NewWord.png" />
+                <div class="totot">
+                    JavaScript is a programming language used to make webpages interactive.
+                    It is what gives a page life—the interactive elements and animation that engage a user
+                    <button id="posdps" type="button" class="btn btn-primary">Detail</button>
+                </div>
+            </div>
+            <div class="dspds">
+                <img id="spos" alt="" src="1200px-Samsung_Logo.svg.png" />
+                <div class="totot">
+                    JavaScript is a programming language used to make webpages interactive.
+                    It is what gives a page life—the interactive elements and animation that engage a user
+                    <button id="posdpss" type="button" class="btn btn-primary">Detail</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
