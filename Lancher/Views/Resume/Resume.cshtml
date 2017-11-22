@@ -1,0 +1,245 @@
+﻿
+@{
+    ViewBag.Title = "Resume";
+    Layout = null;
+}
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    .Head_bar {
+        background-color: black;
+        width: 100%;
+        height: 18%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+
+    .img_Profile {
+        background-color: black;
+    }
+
+    .Text_Profile {
+        background-color: black;
+    }
+
+    .Top.row {
+        margin-top: -0.5%;
+    }
+
+    .Icon_all {
+        height: 700px;
+        background-color: rgb(240,240,240);
+    }
+
+    .Home_icon, .Icon_profile, .Resume_icon, .Lobby, .Post {
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+        padding-left: 20%;
+    }
+
+        .Home_icon:hover {
+            background-color: #555;
+        }
+
+        .Icon_profile:hover {
+            background-color: #555;
+        }
+
+        .Resume_icon:hover {
+            background-color: #555;
+        }
+
+        .Lobby:hover {
+            background-color: #555;
+        }
+
+        .Post:hover {
+            background-color: #555;
+        }
+
+    #QQ {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-left: 25%;
+    }
+
+    .Kuy {
+        margin-left: 3%;
+    }
+
+    .wwe.col-md-9 {
+        margin-top: 3%;
+        margin-left: 1%;
+        border: solid;
+    }
+
+    .sspop {
+        width: 55%;
+        background-color: rgb(240, 240, 240);
+    }
+
+    .kuyt.row {
+        margin-top: 1%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .ytyr {
+        background-color: rgb(240,240,240);
+    }
+
+    .tut {
+        background-color: rgb(240,240,240);
+        width: 35%;
+    }
+
+    .Body_Kuyt.col-md-12.row {
+        background-color: powderblue;
+    }
+
+    .Body_Kuyt.col-md-12.row {
+        margin-left: 0.2%;
+    }
+
+    .List_complete {
+        width: 63%;
+        background-color: rgb(240,240,240);
+        height: 800px;
+        margin-bottom: 2%;
+    }
+
+    .Tress {
+        width: 35%;
+        background-color: rgb(240,240,240);
+        margin-left: 2%;
+        margin-bottom: 2%;
+    }
+
+    .sssssddd.row {
+        margin-left: 1.2%;
+        margin-right: 1%;
+    }
+
+    .tyytyt {
+        padding-top: 5%;
+        margin-left: 10%;
+    }
+
+    .pspdss {
+        font-size: 1.875em;
+        color: black;
+    }
+
+    .eieie {
+        padding-bottom: 2%;
+    }
+
+    #Label3 {
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-left: 3%;
+        color: rgb(0, 135, 195);
+    }
+
+    #Label4 {
+        font-size: 2.5em;
+        color: rgb(60, 60, 60);
+        margin-left: 15%;
+        font-weight: bold;
+    }
+
+    #facebook, #Lable3na {
+        margin-top: 5%;
+        margin-left: 1%;
+    }
+
+    #img.ssd {
+        margin-right: 1%;
+    }
+
+    .popo.row {
+        margin-top: -3%;
+    }
+
+    .lklk.row {
+        margin-top: -4%;
+    }
+</style>
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/…/…/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/…/4.0…/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/…/pop…/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/…/4.0.0…/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+
+<div class="Head_bar">
+    <div><a class="sssss" href="Home.aspx" style="text-decoration:none"><h1 class="Kuy">Lancher</h1></a></div>
+</div>
+<div class="Top row">
+    <div class="left col-md-2">
+        <div class="img_Profile">
+            <center><asp:Image ID="Image1" runat="server" width="100" height="100"></asp:Image></center>
+        </div>
+        <div class="Text_Profile">
+            <center class="eieie"><asp:Label ID="Useremail" runat="server" Text="Label" ForeColor="#3333FF"></asp:Label></center>
+        </div>
+        <div class="Icon_all" style="height:100%">
+            <div class="Home_icon">
+                <img alt="" src="Image/Graphicloads-100-Flat-Home.ico" width="50" height="50" />&nbsp; <a href="Home.aspx" style="text-decoration:none">Home</a>
+            </div>
+            <div class="Icon_profile">
+                <img alt="" src="Image/20161014_58006bff8b1de.png" width="50" height="50" />&nbsp; <a href="User_pro.aspx" style="text-decoration:none">My job</a>
+            </div>
+            <div class="Resume_icon">
+                <img alt="" src="~/Image/file-text-icon.png" width="50" height="50" />&nbsp; <a href="Resume.aspx" style="text-decoration:none">Resume</a>
+            </div>
+            <div class="Lobby">
+                <img alt="" src="Image/MSB_Icon_Job_green.png" width="50" height="50" />&nbsp; <a href="Lobby.aspx" style="text-decoration:none">Lobby</a>
+            </div>
+            <div class="Post">
+                <img alt="" src="Image/Facebook-Messenger-Icon.png" width="50" height="50" />&nbsp; <a href="Post.aspx" style="text-decoration:none">Post</a>
+            </div>
+        </div>
+    </div>
+    <div class="wwe col-md-9" style="background-color:white;">
+        <div class="kuyt row">
+            <div class="sspop">
+                @*ชื่อ - นามสกุล*@
+                <asp:Label ID="Label3" runat="server"></asp:Label>
+                <br />
+                <asp:Label ID="Label4" runat="server"></asp:Label>
+                <br />
+            </div>
+            <div class="ytyr">
+                <img id="ssd" alt="" src="Image/20161014_58006bff8b1de.png" name="QQ" width="100" height="100" />
+            </div>
+            <div class="tut">
+                <div class="popo row">
+                    <span class="tyytyt"><i class="fa fa-facebook-official" aria-hidden="true"></i></span><br /><asp:Label ID="facebook" runat="server"></asp:Label>
+                </div>
+                <div class="lklk row">
+                    <span class="tyytyt"><i class="fa fa-home" aria-hidden="true"></i></span><br /><asp:Label ID="Lable3na" runat="server"></asp:Label>
+                </div>
+                <div class="plkl3 row">
+                </div>
+            </div>
+        </div>
+        <div class="RT">
+            <div class="Body_Kuyt col-md-12 row" style="background-color:white;">
+                <h2 class="pspdss">Complete</h2>
+            </div>
+            <div class="sssssddd row">
+                <div class="List_complete">
+                </div>
+                <div class="Tress">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   

@@ -10,5 +10,7 @@ namespace Lancher
         {
             ConfigureAuth(app);
         }
+
+
     }
 }

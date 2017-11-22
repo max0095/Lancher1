@@ -11,13 +11,10 @@ namespace Lancher.Controllers
     public class RegisterController : Controller
     {
         // GET: Register
-        public ActionResult Index()
-        {
-            return View();
-        }
+
 
         [HttpPost]
-        public ActionResult Regis(UserModel user)
+        public ActionResult Regis()
         {
             string email = Request.Form["email"];
             string password = Request.Form["password"];
@@ -29,7 +26,7 @@ namespace Lancher.Controllers
             string Education = Request.Form["Education"];
             string filename = DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".jpg";
             string birth = Request.Form["bday"];
-
+            
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
             string strSQL = "INSERT INTO user(EmailID ,Password ,FirstName ,LastName ,FacebookName ,Height ,Weight ,Education ,StatusUser ,ImgUser ,BirthDay )"
                      + "VALUES" + "('" + email + "','" + password + "','" + name + "','" + surname + "','" + facebook + "','" + Height + "','" + Weight + "','" + Education + "','" + "User" + "','" + filename + "','" + birth + "')";
@@ -40,7 +37,6 @@ namespace Lancher.Controllers
             return RedirectToAction("Loginn","Loginn");
         }
 
-        
         public ActionResult Register()
         {
             return View();

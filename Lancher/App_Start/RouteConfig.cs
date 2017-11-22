@@ -16,7 +16,7 @@ namespace Lancher
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Register", action = "Register", id = UrlParameter.Optional }
+                defaults: new { controller = "Loginn", action = "Loginn", id = UrlParameter.Optional }
             );
         }
     }
