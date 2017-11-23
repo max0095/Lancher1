@@ -17,8 +17,6 @@ namespace Lancher.Controllers
 
         public ActionResult Resume()
         {
-
-            string jjj =@html.Label("name");
             string email = Session["email"].ToString();
 
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
@@ -35,8 +33,12 @@ namespace Lancher.Controllers
             {
                 while (rd.Read())
                 {
-                    name = rd.GetString(2);
-                    surname = rd.GetString(3); 
+                    ViewBag.name = rd.GetString(2);
+                    ViewBag.lastname = rd.GetString(3);
+                    ViewBag.facebook = rd.GetString(4);
+                    ViewBag.univer = rd.GetString(8);
+
+                    //surname = rd.GetString(3); 
                 }
 
             }

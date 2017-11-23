@@ -22,5 +22,10 @@ namespace Lancher.Controllers
             cmd.ExecuteNonQuery();
             return View();
         }
+
+        public ActionResult Homepage()
+        {
+            return View();
+        }
     }
 }

@@ -200,6 +200,7 @@
     <Compile Include="Controllers\HomerController.cs" />
     <Compile Include="Controllers\LoginnController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -324,6 +325,7 @@
     <Content Include="Views\Loginn\Loginn.cshtml" />
     <Content Include="Views\Homer\FirstPage.cshtml" />
     <Content Include="Views\Resume\Resume.cshtml" />
+    <Content Include="Views\Post\Post.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
