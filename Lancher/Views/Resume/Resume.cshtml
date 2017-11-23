@@ -76,9 +76,10 @@
         border: solid;
     }
 
-    .sspop {
+    .sspop.col-md-3 {
         width: 55%;
-        background-color: rgb(240, 240, 240);
+        /*background-color: rgb(240, 240, 240);*/
+        background-color: red;
     }
 
     .kuyt.row {
@@ -91,9 +92,10 @@
         background-color: rgb(240,240,240);
     }
 
-    .tut {
-        background-color: rgb(240,240,240);
-        width: 35%;
+    .tut.col-md-2 {
+        /*ackground-color: rgb(240,240,240);*/
+        background-color:moccasin;
+        float:left;
     }
 
     .Body_Kuyt.col-md-12.row {
@@ -109,13 +111,15 @@
         background-color: rgb(240,240,240);
         height: 800px;
         margin-bottom: 2%;
+        float: left;
     }
 
     .Tress {
-        width: 35%;
-        background-color: rgb(240,240,240);
-        margin-left: 2%;
-        margin-bottom: 2%;
+        width:20%;
+        background-color:red;
+        margin-left:2%;
+        margin-bottom:2%;
+        float:left;
     }
 
     .sssssddd.row {
@@ -124,7 +128,6 @@
     }
 
     .tyytyt {
-        padding-top: 5%;
         margin-left: 10%;
     }
 
@@ -161,14 +164,44 @@
     }
 
     .popo.row {
-        margin-top: -3%;
     }
 
     .lklk.row {
-        margin-top: -4%;
+
+        width:-20%;
+    }
+    .sdsdsdasdwqdwq {
+        width: 50%;
+        float: left;
+        margin-left: 5%;
+        margin-top: 2%;
+    }
+    .dsdsdsdawd {
+        width: 10%;
+        float: left;
+    }
+    .Headdate 
+    {
+        margin-top:1.5%;
+        margin-left:2%;
+        margin-right:2%;
+        height:15%;
+        background-color:rgb(240,240,240);
+    }
+    #Img_User 
+    {
+        margin-top:1.5%;
+    }
+    .fa.fa-facebook-official 
+    {
+        margin-top:1%;
+    }
+    .fa.fa-university 
+    {
+        margin-top:1%;
     }
 </style>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/…/…/css/font-awesome.min.css" />
@@ -188,6 +221,7 @@
         </div>
         <div class="Text_Profile">
             <center class="eieie"><asp:Label ID="Useremail" runat="server" Text="Label" ForeColor="#3333FF"></asp:Label></center>
+            <center> @Session["email"]</center>
         </div>
         <div class="Icon_all" style="height:100%">
             <div class="Home_icon">
@@ -208,28 +242,28 @@
         </div>
     </div>
     <div class="wwe col-md-9" style="background-color:white;">
-        <div class="kuyt row">
-            <div class="sspop">
-                @*ชื่อ - นามสกุล*@
-                <asp:Label ID="Label3" runat="server"></asp:Label>
-                <br />
-                <asp:Label ID="Label4" runat="server"></asp:Label>
-                <br />
+       <div class="Headdate">
+        <div class="row sdsadsad">
+            <div class="sdsdsdasdwqdwq">
+              <output id="Name" name="nameuser"></output>
+              <output id="Surname" name="surname"></output>
             </div>
-            <div class="ytyr">
-                <img id="ssd" alt="" src="Image/20161014_58006bff8b1de.png" name="QQ" width="100" height="100" />
+            <div class="dsdsdsdawd">
+                <img id="Img_User" src="~/Image/20161014_58006bff8b1de.png" width="100" height="100"/>
             </div>
-            <div class="tut">
-                <div class="popo row">
-                    <span class="tyytyt"><i class="fa fa-facebook-official" aria-hidden="true"></i></span><br /><asp:Label ID="facebook" runat="server"></asp:Label>
-                </div>
-                <div class="lklk row">
-                    <span class="tyytyt"><i class="fa fa-home" aria-hidden="true"></i></span><br /><asp:Label ID="Lable3na" runat="server"></asp:Label>
-                </div>
-                <div class="plkl3 row">
+            <div class="date_user">
+                <div>
+                    <div>
+                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                    </div>
+                        <div>
+                            <i class="fa fa-university" aria-hidden="true"></i>
+                        </div>
+
                 </div>
             </div>
         </div>
+       </div>
         <div class="RT">
             <div class="Body_Kuyt col-md-12 row" style="background-color:white;">
                 <h2 class="pspdss">Complete</h2>
@@ -238,6 +272,7 @@
                 <div class="List_complete">
                 </div>
                 <div class="Tress">
+                    sdasdasdasdaw
                 </div>
             </div>
         </div>
