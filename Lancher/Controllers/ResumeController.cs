@@ -37,6 +37,7 @@ namespace Lancher.Controllers
                     ViewBag.lastname = rd.GetString(3);
                     ViewBag.facebook = rd.GetString(4);
                     ViewBag.univer = rd.GetString(8);
+                    
 
                     //surname = rd.GetString(3); 
                 }
