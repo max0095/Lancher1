@@ -17,9 +17,8 @@ namespace Lancher.Controllers
 
         public ActionResult Resume()
         {
-            string name = Request.Form["nameuser"];
-            string surname = Request.Form["surname"];
 
+            string jjj =@html.Label("name");
             string email = Session["email"].ToString();
 
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");

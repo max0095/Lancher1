@@ -14,8 +14,7 @@ namespace Lancher.Controllers
         public ActionResult FirstPage()
         {
             
-            string email = Session["email"].ToString();
-            
+            string email = Session["email"].ToString();           
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
             string strSQL = "SELECT * FROM user WHERE EmailID = '" + email + "'";
             con.Open();
