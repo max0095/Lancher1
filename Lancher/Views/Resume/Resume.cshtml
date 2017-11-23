@@ -115,11 +115,12 @@
     }
 
     .Tress {
-        width:20%;
-        background-color:red;
-        margin-left:2%;
-        margin-bottom:2%;
-        float:left;
+        width: 20%;
+        background-color: rgb(240,240,240);
+        margin-left: 2%;
+        margin-bottom: 2%;
+        float: left;
+        height: 800px;
     }
 
     .sssssddd.row {
@@ -190,7 +191,7 @@
     }
     #Img_User 
     {
-        margin-top:1.5%;
+        margin-top:5%;
     }
     .fa.fa-facebook-official 
     {
@@ -200,9 +201,18 @@
     {
         margin-top:1%;
     }
-    #Name 
-    {
-
+    label#Name {
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-left: 3%;
+        color: rgb(0, 135, 195);
+    }
+    label#Surname {
+        font-size: 2.5em;
+        color: rgb(60, 60, 60);
+        margin-left: 15%;
+        font-weight: bold;
+       
     }
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -249,10 +259,14 @@
        <div class="Headdate">
         <div class="row sdsadsad">
             <div class="sdsdsdasdwqdwq">
+              <div class="sdpwdopw" style="margin-top:-4%">
+                  <label id="Name" name="nameuser" for="name">@ViewBag.name</label>
+              </div>
+                
               
-                <label id="Name" name="nameuser" for="name">@ViewBag.name</label>
-              
-                <label id="Surname" name="surname">@ViewBag.lastname</label>
+               <div class="sodjqwduj">
+                   <label id="Surname" name="surname">@ViewBag.lastname</label>
+               </div>
 
             </div>
             <div class="dsdsdsdawd">
@@ -260,11 +274,11 @@
             </div>
             <div class="date_user">
                 <div>
-                    <div>
-                        <i class="fa fa-facebook-official" aria-hidden="true">@ViewBag.facebook</i>
+                    <div><br />
+                        <i class="fa fa-facebook-official" aria-hidden="true">&nbsp;&nbsp;&nbsp;&nbsp;@ViewBag.facebook</i>
                     </div>
                         <div>
-                            <i class="fa fa-university" aria-hidden="true">@ViewBag.univer</i>
+                            <i class="fa fa-university" aria-hidden="true">&nbsp;&nbsp;&nbsp;&nbsp;@ViewBag.univer</i>
                         </div>
 
                 </div>
@@ -278,8 +292,8 @@
             <div class="sssssddd row">
                 <div class="List_complete">
                 </div>
-                <div class="Tress">
-                    sdasdasdasdaw
+                <div class="Tress col-md-4">
+                    
                 </div>
             </div>
         </div>

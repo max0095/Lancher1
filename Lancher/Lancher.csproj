@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomerController.cs" />
+    <Compile Include="Controllers\LobbyController.cs" />
     <Compile Include="Controllers\LoginnController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PostController.cs" />
@@ -327,6 +328,7 @@
     <Content Include="Views\Homer\FirstPage.cshtml" />
     <Content Include="Views\Resume\Resume.cshtml" />
     <Content Include="Views\Post\Post.cshtml" />
+    <Content Include="Views\Lobby\Lobby.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
