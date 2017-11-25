@@ -11,10 +11,12 @@ namespace Lancher.Models
         public string Title { get; set; }
         public string PostDescrip { get; set; }
         public string PostMany { get; set; }
-        public string TyprPost { get; set; }
+        public string TypePost { get; set; }
         public string PostMoney { get; set; }
         public DateTime DeadlinePost { get; set; }
-        public string PostEmailD { get; set; }
+        public string PostEmailID { get; set; }
+
+        public string ImagUser { get; set; }
 
     }
 }

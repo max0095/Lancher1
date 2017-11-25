@@ -20,11 +20,11 @@ namespace Lancher.Controllers
         {
             string email = Session["email"].ToString();
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
-            string strSQL = "SELECT * FROM post ";
+            string strSQL = "SELECT post.* , USER.ImgUser FROM post, user WHERE user.EmailID = '"+ email +"'";
             con.Open();
             MySqlCommand cmd = new MySqlCommand(strSQL, con);
             var model = new List<post_model>();
-            
+            string keepphoto  = Session["Photo"].ToString();
             MySqlDataReader dr = cmd.ExecuteReader();
 
             try
@@ -36,8 +36,11 @@ namespace Lancher.Controllers
                     post_m.PostMoney = dr.GetString(5);
                     post_m.PostDescrip = dr.GetString(2);
                     post_m.PostMany = dr.GetString(3);
-                    post_m.TyprPost = dr.GetString(4);
+                    post_m.TypePost = dr.GetString(4);
                     post_m.DeadlinePost = Convert.ToDateTime(dr.GetString(6));
+
+                    post_m.ImagUser = keepphoto;
+                    ViewBag.showImag = post_m.ImagUser;
                     model.Add(post_m);
                 }
             }
@@ -45,7 +48,7 @@ namespace Lancher.Controllers
             {
 
             }
-            return View();
+            return View(model);
         }
 
         public ActionResult LobbyCode()

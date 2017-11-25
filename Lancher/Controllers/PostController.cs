@@ -40,7 +40,7 @@ namespace Lancher.Controllers
                     post_m.PostMoney = dr.GetString(5);
                     post_m.PostDescrip = dr.GetString(2);
                     post_m.PostMany = dr.GetString(3);
-                    post_m.TyprPost = dr.GetString(4);
+                    post_m.TypePost = dr.GetString(4);
                     post_m.DeadlinePost =Convert.ToDateTime(dr.GetString(6));
                     model.Add(post_m);
 

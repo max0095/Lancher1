@@ -19,6 +19,7 @@ namespace Lancher.Controllers
         public ActionResult Resume()
         {
             string email = Session["email"].ToString();
+            string Photo = Session["Photo"].ToString();
 
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
             string strSQL = "SELECT * FROM user WHERE EmailID = '" + email + "'" ;
@@ -41,7 +42,8 @@ namespace Lancher.Controllers
                     User.LastName = rd.GetString(3);
                     User.FacebookName = rd.GetString(4);
                     User.Education = rd.GetString(8);
-                    User.ImgUser = rd.GetString(9);
+                    User.ImgUser = Photo;
+                    ViewBag.showImag = User.ImgUser;
 
                     model.Add(User);
                     //ViewBag.Add(User);

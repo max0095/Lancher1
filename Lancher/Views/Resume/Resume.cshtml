@@ -233,7 +233,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/…/4.0.0…/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 <header>
-    @Model user
+   
 </header>
 <div class="Head_bar">
     <div><a class="sssss" href="Home.aspx" style="text-decoration:none"><h1 class="Kuy">Lancher</h1></a></div>
@@ -243,7 +243,7 @@
         <div class="img_Profile">
             @foreach (var item in Model)
             {
-                <img id="Img_User" src="~/Image/@item.ImgUser" alt="Image" width="100" height="100" />
+                <img id="Img_User" src="~/Image/@ViewBag.showImag" alt="Image" width="100" height="100" />
             }
         </div>
         <div class="Text_Profile">    

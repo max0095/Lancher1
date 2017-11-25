@@ -5,11 +5,6 @@
 }
 
 
-@{
-    ViewBag.Title = "Post";
-    Layout = null;
-}
-
 <style>
     body {
         margin: 0;
@@ -200,6 +195,7 @@
     }
 </style>
 
+@Model  post_model
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/…/…/css/font-awesome.min.css" />
@@ -216,10 +212,9 @@
         <div class="Top row">
     <div class="left col-md-2">
         <div class="img_Profile">
-            @foreach (var item in Model)
-            {
-                <img src="~/Image/@item.ImgUser" alt="Image" width="100" height="100" />
-            }
+            
+                <img src="~/Image/@ViewBag.showImag " alt="Image" width="100" height="100" />
+            
         </div>
         <div class="Text_Profile">
             <center class="eieie"><asp:Label ID="Useremail" ty runat="server" Text="Label" ForeColor="#3333FF"></asp:Label></center>
@@ -244,26 +239,26 @@
         </div>
     </div>
 
-
-    @foreach (var col in Model)
-    {
-        <div class="sdsdsdsds">
             <div class="headddddd">
                 List Job
             </div>
+    @foreach (var col in Model)
+    {
+        <div class="sdsdsdsds">
+            
             <div class="col-md-7">
                 <div class="Name_Post">
-                    @col..name_post    
+                    @col.Title    
                 </div>
                 <div class="jhjhjhjh">
-                    @col..Title
+                    @col.PostDescrip
                 </div>
                 <div class="sdqdwer">
-                    รับคน @col.many&nbsp;&nbsp;&nbsp;&nbsp; ประเภทงาน  @col.type&nbsp;&nbsp;&nbsp; ราคา @col.Money บาท
+                    รับคน @col.PostMany&nbsp;&nbsp;&nbsp;&nbsp; ประเภทงาน  @col.TypePost&nbsp;&nbsp;&nbsp; ราคา @col.PostMoney บาท
 
                 </div>
                 <div class="sdsdkasd">
-                    Deadline @col.Deadline
+                    Deadline @col.DeadlinePost
                 </div>
             </div>
         </div>

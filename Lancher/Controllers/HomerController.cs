@@ -27,6 +27,8 @@ namespace Lancher.Controllers
             dr.Read();
             var User = new user();
             User.ImgUser = dr.GetString(9);
+            Session["Photo"] = User.ImgUser;
+            User.ImgUser = Session["Photo"].ToString();
             model.Add(User);
 
             return View(model);
