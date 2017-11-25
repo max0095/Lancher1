@@ -218,7 +218,7 @@
         <div class="img_Profile">
             @foreach (var item in Model)
             {
-                <img src="~/Image/@item.ImgUser" alt="Image" width="100px" height="100px" />
+                <img src="~/Image/@item.ImgUser" alt="Image" width="100" height="100" />
             }
         </div>
         <div class="Text_Profile">
@@ -227,7 +227,7 @@
         </div>
         <div class="Icon_all" style="height:100%">
             <div class="Home_icon">
-                <img src="~/Image/Graphicloads-100-Flat-Home.ico" width="50" height="50" />&nbsp; <a style="text-decoration:none" href='@Url.Action("FirstPage", "Home")'>Home</a>
+                <img src="~/Image/Graphicloads-100-Flat-Home.ico" width="50" height="50" />&nbsp; <a style="text-decoration:none" href='@Url.Action("FirstPage", "Homer")'>Home</a>
             </div>
             <div class="Icon_profile">
                 <img alt="" src="~/Image/20161014_58006bff8b1de.png" width="50" height="50" />&nbsp; <a href="User_pro.aspx" style="text-decoration:none">My job</a>

@@ -24,7 +24,9 @@ namespace Lancher.Controllers
             con.Open();
             MySqlCommand cmd = new MySqlCommand(strSQL, con);
             var model = new List<post_model>();
+            
             MySqlDataReader dr = cmd.ExecuteReader();
+
             try
             {
                 while (dr.Read())
