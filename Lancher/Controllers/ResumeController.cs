@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Lancher.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,12 +21,13 @@ namespace Lancher.Controllers
             string email = Session["email"].ToString();
 
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
-            string strSQL = "SELECT * FROM user WHERE EmailID = '" + email + "'";
+            string strSQL = "SELECT * FROM user WHERE EmailID = '" + email + "'" ;
 
             con.Open();
             MySqlCommand cmd = new MySqlCommand(strSQL, con);
-            MySqlDataReader rd;
-            rd = cmd.ExecuteReader();
+            var model = new List<user>();
+            MySqlDataReader rd = cmd.ExecuteReader();
+            //rd.Read();
 
             //cmd.ExecuteNonQuery();
 
@@ -33,11 +35,16 @@ namespace Lancher.Controllers
             {
                 while (rd.Read())
                 {
-                    ViewBag.name = rd.GetString(2);
-                    ViewBag.lastname = rd.GetString(3);
-                    ViewBag.facebook = rd.GetString(4);
-                    ViewBag.univer = rd.GetString(8);
-                    
+                    var User = new user();
+
+                    User.FirstName = rd.GetString(2);
+                    User.LastName = rd.GetString(3);
+                    User.FacebookName = rd.GetString(4);
+                    User.Education = rd.GetString(8);
+                    User.ImgUser = rd.GetString(9);
+
+                    model.Add(User);
+                    //ViewBag.Add(User);
 
                     //surname = rd.GetString(3); 
                 }
@@ -46,7 +53,7 @@ namespace Lancher.Controllers
             catch { }
 
 
-            return View();
+            return View(model);
         }
     }
 }

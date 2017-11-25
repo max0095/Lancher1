@@ -24,7 +24,7 @@ namespace Lancher.Controllers
             string Height = Request.Form["Height"];
             string Weight = Request.Form["Weight"];
             string Education = Request.Form["Education"];
-            string filename = DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".jpg";
+            string filename = Request.Form["File1"];
             string birth = Request.Form["bday"];
             
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");

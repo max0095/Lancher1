@@ -18,6 +18,7 @@
     }
 
     .img_Profile {
+        text-align: center;
         background-color: black;
     }
 
@@ -149,7 +150,7 @@
     }
 
     .Body_posting.col-md-2 {
-        margin-top:-2%;
+        margin-top: -2%;
         margin-left: 1%;
         border-right: solid;
         padding-right: 1%;
@@ -176,6 +177,10 @@
     .mimmii.col-md-6 {
         margin-left: 8%;
     }
+
+    .sescolor {
+        color: #55aaf0
+    }
 </style>
 
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
@@ -196,15 +201,15 @@
         <div class="Top row">
             <div class="left col-md-2">
                 <div class="img_Profile">
-                    <img id="QQ" alt="" src="Image/20161014_58006bf27a2d0.png" width="100" height="100" />
+
                 </div>
                 <div class="Text_Profile">
                     <center class="eieie"><asp:Label ID="Useremail" ty runat="server" Text="Label" ForeColor="#3333FF"></asp:Label></center>
-                    <center> @Session["email"]</center>
+                    <center class="sescolor"> @Session["email"]</center>
                 </div>
                 <div class="Icon_all" style="height:100%">
                     <div class="Home_icon">
-                        <img src="~/Image/Graphicloads-100-Flat-Home.ico" width="50" height="50" />&nbsp; <a style="text-decoration:none" href='@Url.Action("Homepage", "Home")'>Home</a>
+                        <img src="~/Image/Graphicloads-100-Flat-Home.ico" width="50" height="50" />&nbsp; <a style="text-decoration:none" href='@Url.Action("FirstPage", "Homer")'>Home</a>
                     </div>
                     <div class="Icon_profile">
                         <img alt="" src="~/Image/20161014_58006bff8b1de.png" width="50" height="50" />&nbsp; <a href="User_pro.aspx" style="text-decoration:none">My job</a>
@@ -243,47 +248,44 @@
                 </div>
 
 
-@foreach (var col in Model)
-{
-    <div class="ps2 row">
-        <div class="headdddddd" style="margin-top:1%; margin-left:1%">
-           ไอดีโพสต์ :&nbsp;@col.PostID
-        </div>
-        <div class="sls col-md-9" style="margin-top:1%">
-            ชื่อโพส :&nbsp;<asp:Label ID="Name_Post2" runat="server">@col.Title</asp:Label>
-        </div>
-        <div class="settting col-md-2">
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-        </div>
-        <div class="price col-md-11">
-            <div class="sssssssss">ราคา&nbsp;<asp:Label ID="Price" runat="server">@col.PostMoney</asp:Label> &nbsp;บาท</div>
-        </div>
-        
-        <div class="Flyyyy col-md-6">
-            รายละเอียด :&nbsp;&nbsp;<asp:Label ID="Dest" runat="server">@col.PostDescrip</asp:Label>
-        </div>
-        <div class="Many_User col-md-2">
-            <img alt="" src="20161014_58006bff8b1de.png" width="100px" height="100px;" />
-        </div>
-        <div class="sssssss col-md-1">
-            <asp:Label ID="Mn" runat="server"></asp:Label> &nbsp;คน
-        </div>
-        <div class="Nouuu col-md-5">
-            จำนวนคนที่รับ &nbsp;&nbsp;@col.PostMany<input id="sssssssssssss" name="many" />&nbsp;&nbsp;ประเภทงาน&nbsp;&nbsp;@col.TyprPost<input id="typepost" type="text" name="typepost" />
-        </div>
+                @foreach (var col in Model)
+                {
+                    <div class="ps2 row">
+                        <div class="headdddddd" style="margin-top:1%; margin-left:1%">
+                            ไอดีโพสต์ :&nbsp;@col.PostID 
+                            <input id="add" type="button" class="button" value="สร้าง" style="text-align:right"/>
+                        </div>
+                        <div class="sls col-md-9" style="margin-top:1%">
+                            ชื่อโพส :&nbsp;<asp:Label ID="Name_Post2" runat="server">@col.Title</asp:Label>
+                        </div>
+                        <div class="settting col-md-2">
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </div>
+                        <div class="price col-md-11">
+                            <div class="sssssssss">ราคา&nbsp;<asp:Label ID="Price" runat="server">@col.PostMoney</asp:Label> &nbsp;บาท</div>
+                        </div>
 
-        <div class="mimmii col-md-6" >
-            วันสิ้นสุดรับสมัคร  @col.DeadlinePost
-        </div>
-        <div class="ssssaasa col-md-6" style="">
-            <img id="linka" alt="" src="img_1447.png" height="10" width="10" /><br />
-        </div>
-    </div>
+                        <div class="Flyyyy col-md-6">
+                            รายละเอียด :&nbsp;&nbsp;<asp:Label ID="Dest" runat="server">@col.PostDescrip</asp:Label>
+                        </div>
+                        <div class="Many_User col-md-2">
+                            <img alt="" src="20161014_58006bff8b1de.png" width="100px" height="100px;" />
+                        </div>
+                        <div class="sssssss col-md-1">
+                            <asp:Label ID="Mn" runat="server"></asp:Label> &nbsp;คน
+                        </div>
+                        <div class="Nouuu col-md-5">
+                            จำนวนคนที่รับ &nbsp;&nbsp;@col.PostMany<input id="sssssssssssss" name="many" />&nbsp;&nbsp;ประเภทงาน&nbsp;&nbsp;@col.TyprPost<input id="typepost" type="text" name="typepost" />
+                        </div>
 
-
-}
-                
-
+                        <div class="mimmii col-md-6">
+                            วันสิ้นสุดรับสมัคร  @col.DeadlinePost
+                        </div>
+                        <div class="ssssaasa col-md-6" style="">
+                            <img id="linka" alt="" src="img_1447.png" height="10" width="10" /><br />
+                        </div>
+                    </div>
+                }
             </div>
             <div class="Deadline col-md-2" style="height:90em">
                 Dead-line

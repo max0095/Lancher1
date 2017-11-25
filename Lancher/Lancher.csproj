@@ -226,6 +226,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\post_model.cs" />
+    <Compile Include="Models\user.cs" />
     <Compile Include="Models\User_1.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -255,6 +256,7 @@
     <Content Include="Image\Facebook-Messenger-Icon.png" />
     <Content Include="Image\file-text-icon.png" />
     <Content Include="Image\Graphicloads-100-Flat-Home.ico" />
+    <Content Include="Image\maxphoto.jpg" />
     <Content Include="Image\MSB_Icon_Job_green.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

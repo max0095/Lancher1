@@ -26,7 +26,10 @@ namespace Lancher.Controllers
             con.Open();
             MySqlCommand cmd = new MySqlCommand(strSQL, con);
             var model = new List<post_model>();
+            
             MySqlDataReader dr = cmd.ExecuteReader();
+
+
             try
             {
                 while (dr.Read())
@@ -40,6 +43,7 @@ namespace Lancher.Controllers
                     post_m.TyprPost = dr.GetString(4);
                     post_m.DeadlinePost =Convert.ToDateTime(dr.GetString(6));
                     model.Add(post_m);
+
                 }
             }
             catch
