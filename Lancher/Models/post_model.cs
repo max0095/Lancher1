@@ -18,5 +18,7 @@ namespace Lancher.Models
 
         public string ImagUser { get; set; }
 
+        public string SubUser { get; set; }
+
     }
 }
