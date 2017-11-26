@@ -12,21 +12,19 @@ namespace Lancher.Controllers
     {
 
         // GET: Post
-        public ActionResult Index()
-        {
-            
-            return View();
-        }
+
 
         public ActionResult Post()
         {
             string email = Session["email"].ToString();
+            
+
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
             string strSQL = "SELECT * FROM post WHERE PostEmailID = '" + email + "'";
             con.Open();
             MySqlCommand cmd = new MySqlCommand(strSQL, con);
             var model = new List<post_model>();
-            
+            string keepphoto = Session["Photo"].ToString();
             MySqlDataReader dr = cmd.ExecuteReader();
 
 
@@ -42,6 +40,10 @@ namespace Lancher.Controllers
                     post_m.PostMany = dr.GetString(3);
                     post_m.TypePost = dr.GetString(4);
                     post_m.DeadlinePost =Convert.ToDateTime(dr.GetString(6));
+
+                    post_m.ImagUser = keepphoto;
+                    ViewBag.showImag = post_m.ImagUser;
+
                     model.Add(post_m);
 
                 }
@@ -50,24 +52,6 @@ namespace Lancher.Controllers
             {
 
             }
-            /*try
-            {
-                while (rd.Read())
-                {
-                    ViewBag.idpost = rd.GetString(0);
-                    ViewBag.Title = rd.GetString(1);
-                    ViewBag.pucket = rd.GetString(5);
-                    ViewBag.des = rd.GetString(2);
-                    ViewBag.Many = rd.GetString(3);
-                    ViewBag.type = rd.GetString(4);
-                    ViewBag.Deadline = rd.GetString(6);
-                }
-
-            }
-            catch
-            {
-
-            }*/
 
             return View(model);
         }
@@ -92,6 +76,11 @@ namespace Lancher.Controllers
             cmd.ExecuteNonQuery();
 
             return RedirectToAction("Post", "Post");
-        }   
+        }
+
+        public ActionResult Detail()
+        {
+            return View();
+        }
     }
 }

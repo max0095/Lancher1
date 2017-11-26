@@ -55,5 +55,10 @@ namespace Lancher.Controllers
         {
             return View();
         }
+
+        public ActionResult sub()
+        {
+            return View();
+        }
     }
 }
