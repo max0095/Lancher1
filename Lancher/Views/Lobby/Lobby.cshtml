@@ -179,7 +179,7 @@
     }
 
     .col-md-7 {
-        background-color: red;
+        background-color:rgb(240,240,240);
         margin-left: 5%;
     }
 
@@ -188,7 +188,7 @@
     }
 
     .Name_Post {
-        background-color: aqua;
+       background-color:rgb(240,240,240);
     }
 
     .rtyrtyju {
@@ -260,6 +260,7 @@
     {
         <div class="loui">
             <div class="444">
+                @col.PostID
                 <div class="col-md-7" style="margin-bottom:2%">
                     <div class="Name_Post">
                         @col.Title
@@ -276,7 +277,7 @@
                     </div>
                     <br />
                     <div class="asdkmjasod">
-                        <input id="Buttonsub" name="mji" type="button" class="mko" value="คอมเมนต์" onclick="location.href='@Url.Action("jub", "Lobby")'" />
+                        <input id="Buttonsub" name="mji" type="button" class="mko" value="เข้าร่วม" onclick="location.href='@Url.Action("jub", "Lobby", new {col.PostID})'" />
                     </div>
                 <br />
                 </div>                
