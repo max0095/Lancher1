@@ -20,8 +20,6 @@ namespace Lancher.Models
         public string StatusUser { get; set; }
 
         //public string PostID { get; set; }
-        //public string EmailID { get; set; }
-        //public string PostID { get; set; }
         public string Title { get; set; }
         public string PostDescrip { get; set; }
         public string PostMany { get; set; }

@@ -16,18 +16,18 @@ namespace Lancher.Controllers
         {
             string email = Session["email"].ToString();
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
-            string strSQL = "SELECT post.* , USER.ImgUser FROM post, user WHERE user.EmailID = '"+ email +"'";
+            string strSQL = "SELECT post.* , USER.ImgUser FROM post, user WHERE user.EmailID = '" + email + "'";
             con.Open();
             MySqlCommand cmd = new MySqlCommand(strSQL, con);
             var model = new List<post_model>();
-            string keepphoto  = Session["Photo"].ToString();
+            string keepphoto = Session["Photo"].ToString();
             MySqlDataReader dr = cmd.ExecuteReader();
 
             try
             {
                 while (dr.Read())
                 {
-                    var post_m = new post_model();    
+                    var post_m = new post_model();
                     post_m.PostID = dr.GetString(0);
                     post_m.Title = dr.GetString(1);
                     post_m.PostMoney = dr.GetString(5);
@@ -66,7 +66,7 @@ namespace Lancher.Controllers
             MySqlCommand cmd = new MySqlCommand(strSQL, con);
             cmd.ExecuteNonQuery();
 
-            return RedirectToAction("Jabbmo", "Myjob");
+            return RedirectToAction("Jabb", "Myjob");
         }
 
     }
