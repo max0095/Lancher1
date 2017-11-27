@@ -8,13 +8,9 @@ using MySql.Data.MySqlClient;
 
 namespace Lancher.Controllers
 {
+    [Route("[controller]/[action]")]
     public class LobbyController : Controller
     {
-        // GET: Lobby
-        public ActionResult Index()
-        {
-            return View();
-        }
 
         public ActionResult Lobby()
         {
@@ -31,7 +27,8 @@ namespace Lancher.Controllers
             {
                 while (dr.Read())
                 {
-                    var post_m = new post_model();                  
+                    var post_m = new post_model();    
+                    post_m.PostID = dr.GetString(0);
                     post_m.Title = dr.GetString(1);
                     post_m.PostMoney = dr.GetString(5);
                     post_m.PostDescrip = dr.GetString(2);
@@ -56,11 +53,20 @@ namespace Lancher.Controllers
             return View();
         }
 
-      
-        public ActionResult jub(string id)
+        [HttpPost]
+        public ActionResult jub()
         {
+            string postid = Request.Form["111"];
+            string email = Session["email"].ToString();
 
-            return View();
+            MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
+            string strSQL = "INSERT INTO posting(PostID , EmailID)"
+                + "VALUES" + "('" + postid + "','" + email + "')";
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand(strSQL, con);
+            cmd.ExecuteNonQuery();
+
+            return RedirectToAction("Jabbmo", "Myjob");
         }
 
     }

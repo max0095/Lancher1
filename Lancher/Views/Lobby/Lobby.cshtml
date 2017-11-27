@@ -33,7 +33,7 @@
 
     .Icon_all {
         background-color: rgb(240,240,240);
-        height: 700px;
+        height: 100em;
     }
 
     .Home_icon, .Icon_profile, .Resume_icon, .Lobby, .Post {
@@ -179,7 +179,7 @@
     }
 
     .col-md-7 {
-        background-color:rgb(240,240,240);
+        background-color: rgb(240,240,240);
         margin-left: 5%;
     }
 
@@ -188,7 +188,7 @@
     }
 
     .Name_Post {
-       background-color:rgb(240,240,240);
+        background-color: rgb(240,240,240);
     }
 
     .rtyrtyju {
@@ -206,10 +206,10 @@
     .loui {
         margin-top: 3%;
     }
-    .Buttonsub {
-        margin-top:5%;
-    }
 
+    .Buttonsub {
+        margin-top: 5%;
+    }
 </style>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -237,12 +237,12 @@
             <center class="eieie"><asp:Label ID="Useremail" ty runat="server" Text="Label" ForeColor="#3333FF"></asp:Label></center>
             <center class="sescolor"> @Session["email"]</center>
         </div>
-        <div class="Icon_all" style="height:100%">
+        <div class="Icon_all">
             <div class="Home_icon">
                 <img src="~/Image/Graphicloads-100-Flat-Home.ico" width="50" height="50" />&nbsp; <a style="text-decoration:none" href='@Url.Action("FirstPage","Homer")'>Home</a>
             </div>
             <div class="Icon_profile">
-                <img alt="" src="~/Image/20161014_58006bff8b1de.png" width="50" height="50" />&nbsp; <a href="User_pro.aspx" style="text-decoration:none">My job</a>
+                <img alt="" src="~/Image/20161014_58006bff8b1de.png" width="50" height="50" />&nbsp; <a style="text-decoration:none" href='@Url.Action("Jabb","Myjob")'>My job</a>
             </div>
             <div class="Resume_icon">
                 <img alt="" src="~/Image/file-text-icon.png" width="50" height="50" />&nbsp; <a style="text-decoration:none" href='@Url.Action("Resume","Resume")'>Resume</a>
@@ -256,40 +256,46 @@
         </div>
     </div>
 
-    @foreach (var col in Model)
-    {
-        <div class="loui">
-            <div class="444">
-                @col.PostID
-                <div class="col-md-7" style="margin-bottom:2%">
-                    <div class="Name_Post">
-                        @col.Title
-                    </div>
-                    <div class="jhjhjhjh">
-                        @col.PostDescrip
-                    </div>
-                    <div class="sdqdwer">
-                        รับคน @col.PostMany&nbsp;&nbsp;&nbsp;&nbsp; ประเภทงาน  @col.TypePost&nbsp;&nbsp;&nbsp; ราคา @col.PostMoney บาท
 
-                    </div>
-                    <div class="sdsdkasd">
-                        Deadline @col.DeadlinePost
-                    </div>
-                    <br />
-                    <div class="asdkmjasod">
-                        <input id="Buttonsub" name="mji" type="button" class="mko" value="เข้าร่วม" onclick="location.href='@Url.Action("jub", "Lobby", new {col.PostID})'" />
-                    </div>
-                <br />
-                </div>                
-            </div>
+    
+        @foreach (var col in Model)
+        {
+            <form action="/Lobby/jub" method="post" role="form">
+                <div class="loui">
+                    <div class="444">
 
-            @*<div class="55555" style="float:left">*@
-                @*<input id="kjl" type="text" style="width:20%" />
-                <input id="Buttonsub" type="button" class="mko" value="คอมเมนต์" />*@
-            @*</div>*@
+                        <div class="col-md-7" style="margin-bottom:2%">
+                            ไอดีโพสต์ :&nbsp;@col.PostID
+                            <input type="hidden" id="111" name="111" value="@col.PostID" />
+                            <div class="Name_Post">
+                                @col.Title
+                            </div>
+                            <div class="jhjhjhjh">
+                                @col.PostDescrip
+                            </div>
+                            <div class="sdqdwer">
+                                รับคน @col.PostMany&nbsp;&nbsp;&nbsp;&nbsp; ประเภทงาน  @col.TypePost&nbsp;&nbsp;&nbsp; ราคา @col.PostMoney บาท
 
-        </div>
-    }
+                            </div>
+                            <div class="sdsdkasd">
+                                Deadline @col.DeadlinePost
+                            </div>
+                            <br />
+                            <div class="asdkmjasod">
+                                <input id="Buttonsub" name="mji" type="submit" class="mko" value="เข้าร่วม" />
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+
+                    @*<div class="55555" style="float:left">*@
+                    @*<input id="kjl" type="text" style="width:20%" />
+                        <input id="Buttonsub" type="button" class="mko" value="คอมเมนต์" />*@
+                    @*</div>*@
+
+                </div>
+            </form>
+        }
 
 </div>
 
