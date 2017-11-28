@@ -20,19 +20,23 @@ namespace Lancher.Controllers
             
 
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
-            string strSQL = "SELECT * FROM post WHERE PostEmailID = '" + email + "'";
+            //string strSQL = "SELECT post.* FROM post WHERE PostEmailID = '" + email + "'";
+            string strSQL = "SELECT post.* , posting.EmailID , posting.PostID FROM posting inner join user on posting.EmailID = user.EmailID inner join post on posting.PostID = post.PostID WHERE posting.EmailID = '"+ email +"' ";
             con.Open();
             MySqlCommand cmd = new MySqlCommand(strSQL, con);
-            var model = new List<post_model>();
+            //var model = new List<post_model>();
+            var model = new List<ThreeTableViewModel>();
             string keepphoto = Session["Photo"].ToString();
             MySqlDataReader dr = cmd.ExecuteReader();
 
 
             try
             {
+                int i = 0;
                 while (dr.Read())
                 {
-                    var post_m = new post_model();
+                    var post_m = new ThreeTableViewModel();
+                    //var post_m = new post_model();
                     post_m.PostID = dr.GetString(0);
                     post_m.Title = dr.GetString(1);
                     post_m.PostMoney = dr.GetString(5);
@@ -41,12 +45,16 @@ namespace Lancher.Controllers
                     post_m.TypePost = dr.GetString(4);
                     post_m.DeadlinePost =Convert.ToDateTime(dr.GetString(6));
 
+                   // post_m.EmailID = dr.GetString("EmailID");
+                    //three.EmailID = dr.GetString(0);
+
                     post_m.ImagUser = keepphoto;
                     ViewBag.showImag = post_m.ImagUser;
 
                     model.Add(post_m);
-
+                    //model1.Add(three);
                 }
+                return View(model);
             }
             catch
             {
