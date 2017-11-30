@@ -2,7 +2,12 @@
 @{
     ViewBag.Title = "Lobby";
     Layout = null;
+
+    
 }
+@using Lancher.Models;
+
+@model List<post_model>
 
 
 <style>
@@ -257,6 +262,7 @@
     </div>
 
 
+    @Model.Count() eiei;
 
     @foreach (var col in Model)
     {

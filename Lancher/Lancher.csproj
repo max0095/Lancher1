@@ -205,6 +205,7 @@
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
+    <Compile Include="Controllers\testController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -228,6 +229,7 @@
     </Compile>
     <Compile Include="Models\posting.cs" />
     <Compile Include="Models\post_model.cs" />
+    <Compile Include="Models\test.cs" />
     <Compile Include="Models\ThreeTableViewModel.cs" />
     <Compile Include="Models\user.cs" />
     <Compile Include="Models\User_1.cs">
@@ -336,6 +338,7 @@
     <Content Include="Views\Lobby\Lobby.cshtml" />
     <Content Include="Views\Post\Detail.cshtml" />
     <Content Include="Views\Myjob\Jabb.cshtml" />
+    <Content Include="Views\test\test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
