@@ -3,6 +3,8 @@
     ViewBag.Title = "Resume";
     Layout = null;
 }
+@using Lancher.Models;
+@model List<ThreeTableViewModel>
 
 <style>
     body {
@@ -241,8 +243,8 @@
 <div class="Top row">
     <div class="left col-md-2">
         <div class="img_Profile">
-                @*<img id="Img_User" src="~/Image/@ViewBag.showImag" alt="Image" width="100" height="100" />*@
-                <img id="Img_User" src="~/Image/@ViewBag.showImag" class="img-circle" alt="Cinque" width="100" height="100" />
+            @*<img id="Img_User" src="~/Image/@ViewBag.showImag" alt="Image" width="100" height="100" />*@
+            <img id="Img_User" src="~/Image/@ViewBag.showImag" class="img-circle" alt="Cinque" width="100" height="100" />
 
         </div>
         <div class="Text_Profile">
@@ -269,18 +271,19 @@
 
     @foreach (var col in Model)
     {
-        
+
         <div class="loui" style="margin-left:5%; margin-top:4%; background-color:rgb(240,240,240);">
             <div class="444">
 
                 <div class="col-md-7" style="margin-bottom:2%">
-                    ไอดีโพสต์ :&nbsp;<input type="hidden" id="111" name="111" value="@col.PostID"/>
+                    ไอดีโพสต์ :&nbsp;@col.PostID
+                    <input type="hidden" id="111" name="111" value="@col.PostID" />
                     @*<input type="hidden" id="111" name="111" value="@col.PostID" />*@
                     <div class="Name_Post">
-                       @col.Title
+                        @col.Title
                     </div>
                     <div class="jhjhjhjh">
-                         @col.PostDescrip
+                        @col.PostDescrip
                     </div>
                     <div class="sdqdwer">
                         รับคน @col.PostMany&nbsp;&nbsp;&nbsp;&nbsp; ประเภทงาน  @col.TypePost&nbsp;&nbsp;&nbsp; ราคา @col.PostMoney บาท

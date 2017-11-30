@@ -26,7 +26,9 @@ namespace Lancher.Controllers
             MySqlDataReader dr = cmd.ExecuteReader();
             dr.Read();
             var User = new user();
+            User.StatusUser = dr.GetString(10);
             User.ImgUser = dr.GetString(9);
+            ViewBag.sdsdsdsd = User.StatusUser;
             Session["Photo"] = User.ImgUser;
             User.ImgUser = Session["Photo"].ToString();
             model.Add(User);
@@ -38,5 +40,15 @@ namespace Lancher.Controllers
         {
             return View();
         }
+        public ActionResult Admin()
+        {
+            return RedirectToAction("adViewUser", "adViewUser");
+        }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Loginn", "Loginn");
+        }
+
     }
 }

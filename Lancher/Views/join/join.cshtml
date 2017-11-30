@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "join";
+    Layout = null;
+}
+
+@using Lancher.Models
+@model List<ThreeTableViewModel>
+
+@foreach (var col in Model)
+{
+    
+    <div class="132" >
+    @col.PostID
+        
+    @col.EmailID
+        <input type="submit"/>
+      </div>
+}
+

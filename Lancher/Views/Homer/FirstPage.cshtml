@@ -172,6 +172,15 @@
         width: 13px;
         padding: 0
     }
+    #Button1 {
+        margin-left: 80%;
+        margin-top: -3%;
+    }
+
+    .btn.btn-light {
+        margin-left: 90%;
+        margin-top: -3%;
+    }
 </style>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -186,7 +195,22 @@
 
 <body>
     <div class="Head_bar">
-        <div><a class="sssss" href="Home.aspx" style="text-decoration:none"><h1 class="Kuy">Lancher</h1></a></div>
+        @using (Html.BeginForm("Admin", "Homer", FormMethod.Post))
+        {
+            <div class="sssqaq row">
+                <a class="sssss" href="Home.aspx" style="text-decoration:none"><h1 class="Kuy">Lancher</h1></a>
+                <input id="Button1" type="button" value="Admin" hidden />
+                <input class="btn btn-light" type="button" value="Log out" onclick="location.href='@Url.Action("Logout", "Homer")'" />
+                @if (ViewBag.sdsdsdsd == "Admin")
+                {
+                    <input id="Button1" type="submit" value="Admin" onclick="location.href='@Url.Action("Admin", "Homer")'" />
+                }
+
+            </div>
+        }
+
+        @*<input class="admin" style="text-align:right" type="button" value="Admin" onclick="location.href='@Url.Action("adViewUser","adViewUser")'"/>*@
+    
     </div>
     <div class="Top row">
         <div class="left col-md-2">
@@ -288,6 +312,11 @@
             <div class="sqw col-md-3 row" style="background-color:rgb(240,240,240); height:100em; margin-top:3%; margin-left:3%;">
 
             </div>
+
+            <div class="title">
+                <h1>News</h1>
+            </div>
+
 
         </div>
     </div>

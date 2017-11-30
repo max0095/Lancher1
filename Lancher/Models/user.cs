@@ -7,6 +7,7 @@ namespace Lancher.Models
 {
     public class user
     {
+        public string EmailID { get; set; }
         public string PostID { get; set; }
         public string Password { get; set; }
         public string FirstName { get; set; }
@@ -19,5 +20,6 @@ namespace Lancher.Models
 
         public string ImgUser { get; set; }
         public string StatusUser { get; set; }
+        public string Mistake { get; set; }
     }
 }

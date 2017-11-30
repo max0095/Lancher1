@@ -17,11 +17,11 @@ namespace Lancher.Controllers
         public ActionResult Post()
         {
             string email = Session["email"].ToString();
-            
+            string idpost = Request.Form["111"];
 
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
             string strSQL = "SELECT post.* FROM post WHERE PostEmailID = '" + email + "'";
-            //string strSQL = "SELECT post.* , posting.EmailID , posting.PostID FROM posting inner join user on posting.EmailID = user.EmailID inner join post on posting.PostID = post.PostID WHERE post.PostEmailID = '"+ email +"' ";
+            //string strSQL = "SELECT post.* , posting.EmailID , posting.PostID FROM posting inner join user on posting.EmailID = user.EmailID inner join post on posting.PostID = post.PostID WHERE posting.PostID = '" + idpost + "' OR post.PostEmailID = '" + email + "'";
             con.Open();
             MySqlCommand cmd = new MySqlCommand(strSQL, con);
             var model = new List<post_model>();
@@ -44,8 +44,9 @@ namespace Lancher.Controllers
                     post_m.TypePost = dr.GetString(4);
                     post_m.DeadlinePost =Convert.ToDateTime(dr.GetString(6));
 
-                    //post_m.EmailID = dr.GetString(9);
+                    //post_m.EmailID = dr["EmailID"].ToString();
                     //three.EmailID = dr.GetString(0);
+                    //ViewBag.EmailID = post_m.EmailID;
 
                     post_m.ImagUser = keepphoto;
                     ViewBag.showImag = post_m.ImagUser;
@@ -61,6 +62,40 @@ namespace Lancher.Controllers
 
             return View(model);
         }
+
+        //public ActionResult SubPost()
+        //{
+        //    string idpost = Request.Form["111"];
+
+        //    MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
+        //    string strSQL = "SELECT post.* , posting.EmailID , posting.PostID FROM posting inner join user on posting.EmailID = user.EmailID inner join post on posting.PostID = post.PostID WHERE posting.PostID = '" + idpost + "'";
+        //    con.Open();
+        //    MySqlCommand cmd = new MySqlCommand(strSQL, con);
+        //    var model = new List<ThreeTableViewModel>();
+        //    MySqlDataReader dr = cmd.ExecuteReader();
+
+        //    try
+        //    {
+
+        //        while (dr.Read())
+        //        {
+        //            var post_m = new ThreeTableViewModel();
+
+        //            post_m.EmailID = dr["EmailID"].ToString();
+
+        //            model.Add(post_m);
+
+        //        }
+        //        return View(model);
+        //    }
+        //    catch
+        //    {
+
+        //    }
+
+        //    return View(model);
+        //}
+
 
         public ActionResult PostCode()
         {
@@ -88,5 +123,15 @@ namespace Lancher.Controllers
         {
             return View();
         }
+
+        public ActionResult change(posting post)
+        {
+            var model = new List<posting>();
+            string usdsa = Request.Form["111"];
+            Session["111"] = usdsa;
+            return RedirectToAction("join", "join");
+        }
+
+
     }
 }

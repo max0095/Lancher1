@@ -20,22 +20,23 @@ namespace Lancher.Controllers
             MySqlCommand cmd = new MySqlCommand(strSQL, con);
             var model = new List<ThreeTableViewModel>();
             string keepphoto = Session["Photo"].ToString();
-            MySqlDataReader rd = cmd.ExecuteReader();
+            MySqlDataReader dr = cmd.ExecuteReader();
 
             ViewBag.showImag = keepphoto;
 
             try
-            {
-                while (rd.Read())
+            {   
+                while (dr.Read())
                 {
                     var Threepost_m = new ThreeTableViewModel();
-                    Threepost_m.PostID = rd.GetString(0);
-                    Threepost_m.Title = rd.GetString(10);
-                    Threepost_m.PostMoney = rd.GetString(5);
-                    Threepost_m.PostDescrip = rd.GetString(2);
-                    Threepost_m.PostMany = rd.GetString(3);
-                    Threepost_m.TypePost = rd.GetString(4);
-                    Threepost_m.DeadlinePost = Convert.ToDateTime(rd.GetString(6));
+                    Threepost_m.PostID = dr.GetString(0);
+                    Threepost_m.Title = dr.GetString(1);
+                    Threepost_m.PostDescrip = dr.GetString(2);
+                    Threepost_m.PostMany = dr.GetString(3);
+                    Threepost_m.TypePost = dr.GetString(4);
+                    Threepost_m.PostMoney = dr.GetString(5);
+                    Threepost_m.DeadlinePost = Convert.ToDateTime(dr.GetString(6));
+                    Threepost_m.PostEmailID = dr.GetString(7);
 
                     ViewBag.showImag = keepphoto;
 

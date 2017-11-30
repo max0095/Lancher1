@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Lancher.Models;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace Lancher.Controllers
 {
@@ -17,6 +18,7 @@ namespace Lancher.Controllers
             string email = Session["email"].ToString();
 
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
+            //SqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
             string strSQL = "SELECT * FROM post";
 
             con.Open();
