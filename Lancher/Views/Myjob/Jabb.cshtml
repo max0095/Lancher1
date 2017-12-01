@@ -271,39 +271,34 @@
 
     @foreach (var col in Model)
     {
+        <form action="/Myjob/deletejob" method="post">
+            <div class="loui" style="margin-left:5%; margin-top:4%; background-color:rgb(240,240,240);">
+                <div class="444">
 
-        <div class="loui" style="margin-left:5%; margin-top:4%; background-color:rgb(240,240,240);">
-            <div class="444">
+                    <div class="col-md-7" style="margin-bottom:2%; border:solid; margin-left:10em;">
+                        ไอดีโพสต์ :&nbsp;@col.PostID
+                        <input type="hidden" id="111" name="111" value="@col.PostID" />
+                        @*<input type="hidden" id="111" name="111" value="@col.PostID" />*@
+                        <div class="Name_Post">
+                            @col.Title
+                        </div>
+                        <div class="jhjhjhjh">
+                            @col.PostDescrip
+                        </div>
+                        <div class="sdqdwer">
+                            รับคน @col.PostMany&nbsp;&nbsp;&nbsp;&nbsp; ประเภทงาน  @col.TypePost&nbsp;&nbsp;&nbsp; ราคา @col.PostMoney บาท
 
-                <div class="col-md-7" style="margin-bottom:2%">
-                    ไอดีโพสต์ :&nbsp;@col.PostID
-                    <input type="hidden" id="111" name="111" value="@col.PostID" />
-                    @*<input type="hidden" id="111" name="111" value="@col.PostID" />*@
-                    <div class="Name_Post">
-                        @col.Title
-                    </div>
-                    <div class="jhjhjhjh">
-                        @col.PostDescrip
-                    </div>
-                    <div class="sdqdwer">
-                        รับคน @col.PostMany&nbsp;&nbsp;&nbsp;&nbsp; ประเภทงาน  @col.TypePost&nbsp;&nbsp;&nbsp; ราคา @col.PostMoney บาท
+                        </div>
+                        <div class="sdsdkasd">
+                            Deadline @col.DeadlinePost
+                        </div>
 
+                        <button type="submit" style="margin-left:90%;margin-top:-13%">Delete</button>
                     </div>
-                    <div class="sdsdkasd">
-                        Deadline @col.DeadlinePost
-                    </div>
-                    <br />
-
-                    <br />
                 </div>
             </div>
 
-            @*<div class="55555" style="float:left">*@
-            @*<input id="kjl" type="text" style="width:20%" />
-                <input id="Buttonsub" type="button" class="mko" value="คอมเมนต์" />*@
-            @*</div>*@
-
-        </div>
-
+            
+        </form>
     }
 </div>   

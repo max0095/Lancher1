@@ -134,7 +134,6 @@
     }
 
     .ps2.row {
-        
         border: solid;
         margin-top: 1%;
         margin-left: 20%;
@@ -214,14 +213,15 @@
         margin-top: -6%;
         margin-right: 1%;
     }
+
     .kuh {
-        margin-top:-40%;
-    }
-    .oij.col-md-7{
-        margin-top:2%;
-        margin-left:4%;
+        margin-top: -40%;
     }
 
+    .oij.col-md-7 {
+        margin-top: 2%;
+        margin-left: 4%;
+    }
 </style>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -305,35 +305,38 @@
     {
         foreach (var col in Model)
         {
+            
+                <div class="ps2 col-md-7 row" style="margin-top:5em">
+                    <div class="headdddddd" style="margin-top:1%; margin-left:1%">
+                        ไอดีโพสต์ :&nbsp;@col.PostID
 
-            <div class="ps2 col-md-7 row">
-                <div class="headdddddd" style="margin-top:1%; margin-left:1%">
-                    ไอดีโพสต์ :&nbsp;@col.PostID
+                    </div>
+                    <div class="sls col-md-9" style="margin-top:1%">
+                        ชื่อโพส :&nbsp;<asp:Label ID="Name_Post2" runat="server">@col.Title</asp:Label>
+                    </div>
+                    <div class="settting col-md-2">
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    </div>
+                    <div class="price col-md-11">
+                        <div class="sssssssss">ราคา&nbsp;<asp:Label ID="Price" runat="server">@col.PostMoney</asp:Label> &nbsp;บาท</div>
+                    </div>
 
-                </div>
-                <div class="sls col-md-9" style="margin-top:1%">
-                    ชื่อโพส :&nbsp;<asp:Label ID="Name_Post2" runat="server">@col.Title</asp:Label>
-                </div>
-                <div class="settting col-md-2">
-                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                </div>
-                <div class="price col-md-11">
-                    <div class="sssssssss">ราคา&nbsp;<asp:Label ID="Price" runat="server">@col.PostMoney</asp:Label> &nbsp;บาท</div>
-                </div>
-
-                <div class="Flyyyy col-md-6">
-                    รายละเอียด :&nbsp;&nbsp;<asp:Label ID="Dest" runat="server">@col.PostDescrip</asp:Label>
-                </div>
+                    <div class="Flyyyy col-md-6">
+                        รายละเอียด :&nbsp;&nbsp;<asp:Label ID="Dest" runat="server">@col.PostDescrip</asp:Label>
+                    </div>
 
 
-                <div class="Nouuu col-md-5">
-                    จำนวนคนที่รับ &nbsp;&nbsp;@col.PostMany&nbsp;&nbsp;ประเภทงาน&nbsp;&nbsp;@col.TypePost
-                </div>
-                <div class="mimmii col-md-6">
-                </div>
+                    <div class="Nouuu col-md-5">
+                        จำนวนคนที่รับ &nbsp;&nbsp;@col.PostMany&nbsp;&nbsp;ประเภทงาน&nbsp;&nbsp;@col.TypePost
+                    </div>
+                    <div class="mimmii col-md-6">
+                    </div>
 
-                <input class="hhhh" type="submit" name="111" value="@col.PostID" onclick="location.href='@Url.Action("change", "Post")'" />
-            </div>
+                    <input class="hhhh" type="submit" name="111" value="@col.PostID" onclick="location.href='@Url.Action("change", "Post")'" />
+
+                    
+                </div>
+            
         }
     }
 </div>

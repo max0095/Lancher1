@@ -6,16 +6,33 @@ using System.Web.Mvc;
 using MySql.Data.MySqlClient;
 using Lancher.Models;
 using System.Data.SqlClient;
+using System.Data;
+using System.Collections;
 
 namespace Lancher.Controllers
 {
     public class adViewUserController : Controller
     {
+        public ActionResult Ban()
+        {
+            string Id = Request.Form["111"];
+            string Status = Request.Form["Statuss"].ToString();
+            MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");//
+
+            string strSQL = "UPDATE user SET Mistake = '" + Status + "' WHERE EmailID = '" + Id + "'";
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand(strSQL, con);
+            cmd.ExecuteNonQuery();
+            return RedirectToAction("adViewUser", "adViewUser");
+
+            //return View("adViewUser");
+        }
         // GET: adViewUser
         public ActionResult adViewUser()
         {
+
             MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
-            string strSQL = "SELECT * FROM user";
+            string strSQL = "SELECT * FROM user WHERE StatusUser != '"+"Admin"+"'";
             con.Open();
             MySqlCommand cmd = new MySqlCommand(strSQL, con);
             var model = new List<user>();
@@ -39,7 +56,7 @@ namespace Lancher.Controllers
 
             return View(model);
 
-            return View();
+            
         }
 
         public ActionResult adViewUserUpdate()
@@ -89,21 +106,22 @@ namespace Lancher.Controllers
             return View();
         }
 
-        public ActionResult addserver()
-        {
-            string title = Request.Form["title"];
-            string selectImag = Request.Form["selectImag"];
-            string description = Request.Form["description"];
+        //public ActionResult addserver()
+        //{
+        //    string p_name = Request.Form["title"];
+            
+        //    string p_text = Request.Form["description"];
 
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-FH9A82H; Initial Catalog=lancherdb;User Id=sa;Password=root");
-            string strSQLserver = "INSERT INTO news(title,selectImag,description)"
-                + "VALUE" + "('" + title + "','" + selectImag + "','" + description + "')";
-            con.Open();
-            SqlCommand cmdSqlserver = new SqlCommand(strSQLserver, con);
-            cmdSqlserver.ExecuteNonQuery();
+        //    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-FH9A82H\SQLEXPRESS;Initial Catalog=lancherdb;Integrated Security=True");
+        //    string strSQLserver = "INSERT INTO posthome(p_name,p_text)"
+        //        + "VALUES" + "('" + p_name + "','" + p_text + "')";
+        //    con.Open();
+        //    SqlCommand cmdSqlserver = new SqlCommand(strSQLserver, con);
+        //    cmdSqlserver.ExecuteNonQuery();
+        //    return View();
+        //}
 
-            return View();
-        }
+
 
         
     }

@@ -54,5 +54,21 @@ namespace Lancher.Controllers
         {
             return View();
         }
+
+        public ActionResult deletejob()
+        {
+            string email = Session["email"].ToString();
+            string flfll = Request.Form["111"];
+
+            MySqlConnection con = new MySqlConnection("host=localhost;user=Lancher;password=123456;database=lancherdb");
+            string strSQL = "DELETE FROM posting WHERE EmailID='"+ email +"'  && PostID = '"+ flfll + "'";
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand(strSQL, con);
+
+            cmd.ExecuteNonQuery();
+
+
+            return RedirectToAction("Jabb", "Myjob");
+        }
     }
 }

@@ -1,29 +1,37 @@
 ﻿@using Lancher.Models
 @model List<user>
 
-<h2>Adminnnnnn</h2>
-<table class="table User">
-    <tr>
-        <th>Username</th>
-        <th>Status</th>
-        <th>Status Ban</th>
-    </tr>
-    <form action="" method="post">
+@using (Html.BeginForm("Ban", "adViewUser", FormMethod.Post))
+{
+    <h2>Adminnnnnn</h2>
+    <table class="table User">
+        <tr>
+            <th>Username</th>
+            <th>Status</th>
+            <th>Status Ban</th>
+        </tr>
+
+
         @foreach (var col in Model)
         {
             <tr>
                 <td>@col.EmailID</td>
                 <td>@col.Mistake </td>
                 <td>
-                    <select id="Status" name="Statuss">
-                        <option value="0">-------</option>
-                        <option value="Active">Active</option>
-                        <option value="Ban">Ban</option>
-                    </select>
-                    <input id="Button1" type="submit" name="111" value="Done" onclick="location.href='@Url.Action("Ban", "LastAdmin")'" />
+                    <form action="/adViewUser/Ban" method="post">
+                        <input type="hidden" name="111" value="@col.EmailID"/>
+                        <select id="Status" name="Statuss">
+                            <option value="0">-------</option>
+                            <option value="Active">Active</option>
+                            <option value="Ban">Ban</option>
+                        </select>
+                        <button type="submit">save</button>
+                    </form>
                 </td>
             </tr>
         }
-    </form>
-</table>
-<input id="Kuy1" type="button" value="News" onclick="location.href='@Url.Action("sqlserver", "adViewUser")'" />
+    </table>
+
+}
+    
+    <input id="Kuy1" type="button" value="News" onclick="location.href='@Url.Action("sqlserver", "adViewUser")'" />

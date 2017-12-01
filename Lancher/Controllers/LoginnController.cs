@@ -38,6 +38,7 @@ namespace Lancher.Controllers
                 
                 if ( obj != DBNull.Value)
                 {
+
                     Session["email"] = obj.ToString();
                     
                     return RedirectToAction("FirstPage", "Homer");

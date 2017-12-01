@@ -41,6 +41,9 @@ namespace Lancher.Controllers
                     post_m.DeadlinePost = Convert.ToDateTime(dr.GetString(6));
                     post_m.PostEmailID = dr.GetString(7);
 
+                    post_m.ImagUser = keepphoto;
+                    ViewBag.showImag = post_m.ImagUser;
+
                     model.Add(post_m);
                 }
                 return View(model);
@@ -71,6 +74,8 @@ namespace Lancher.Controllers
             cmd.ExecuteNonQuery();
 
             return RedirectToAction("Jabb", "Myjob");
+
+
         }
 
     }
