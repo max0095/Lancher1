@@ -49,7 +49,7 @@ namespace Lancher.Controllers
                     //ViewBag.EmailID = post_m.EmailID;
 
                     post_m.ImagUser = keepphoto;
-                    ViewBag.showImag = post_m.ImagUser;
+                    Session["Photo"] = post_m.ImagUser;
                     model.Add(post_m);
                     //model1.Add(three);
                 }

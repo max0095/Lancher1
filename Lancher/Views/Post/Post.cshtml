@@ -215,7 +215,7 @@
     }
 
     .kuh {
-        margin-top: -40%;
+        margin-top: -190em;
     }
 
     .oij.col-md-7 {
@@ -234,7 +234,6 @@
 <script src="https://cdnjs.cloudflare.com/…/pop…/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/…/4.0.0…/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-
 @using (Html.BeginForm("PostCode", "Post", FormMethod.Post))
 {
     <form action="" method="put" role="form">
@@ -245,14 +244,14 @@
             <div class="left col-md-2">
                 <div class="img_Profile">
 
-                    <img id="Img_User" src="~/Image/@ViewBag.showImag" class="img-circle" alt="Cinque" width="100" height="100" />
+                    <img id="Img_User" src="~/Image/@Session["Photo"]" class="img-circle" alt="Cinque" width="100" height="100" />
 
                 </div>
                 <div class="Text_Profile">
                     <center class="eieie"><asp:Label ID="Useremail" ty runat="server" Text="Label" ForeColor="#3333FF"></asp:Label></center>
                     <center class="sescolor"> @Session["email"]</center>
                 </div>
-                <div class="Icon_all" style="height:100%">
+                <div class="Icon_all" style="height:200em">
                     <div class="Home_icon">
                         <img src="~/Image/Graphicloads-100-Flat-Home.ico" width="50" height="50" />&nbsp; <a style="text-decoration:none" href='@Url.Action("FirstPage","Homer")'>Home</a>
                     </div>
@@ -271,6 +270,7 @@
                 </div>
             </div>
 
+            <h1>สร้างโพสต์</h1>
             <div class="oij col-md-7">
                 <div class="ps1">
                     <div class="sdsdsd">
@@ -305,8 +305,8 @@
     {
         foreach (var col in Model)
         {
-            
-                <div class="ps2 col-md-7 row" style="margin-top:5em">
+            <div class="sdaa" style="margin-top:7%">
+                <div class="ps2 col-md-7 row" style="margin-top:1%">
                     <div class="headdddddd" style="margin-top:1%; margin-left:1%">
                         ไอดีโพสต์ :&nbsp;@col.PostID
 
@@ -326,17 +326,18 @@
                     </div>
 
 
-                    <div class="Nouuu col-md-5">
+                    <div class="Nouuu col-md-4">
                         จำนวนคนที่รับ &nbsp;&nbsp;@col.PostMany&nbsp;&nbsp;ประเภทงาน&nbsp;&nbsp;@col.TypePost
                     </div>
                     <div class="mimmii col-md-6">
                     </div>
 
-                    <input class="hhhh" type="submit" name="111" value="@col.PostID" onclick="location.href='@Url.Action("change", "Post")'" />
 
-                    
+                    <input class="hhhh" type="submit" name="111" style="margin-top:-1.5em; float:right; margin-bottom:0.5%" value="@col.PostID" onclick="location.href='@Url.Action("change", "Post")'" />
+
+
                 </div>
-            
+            </div>
         }
     }
 </div>

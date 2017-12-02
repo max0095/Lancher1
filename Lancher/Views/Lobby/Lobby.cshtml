@@ -264,7 +264,7 @@
 
 
     @*@Model.Count() eiei;*@
-
+    <h1>ล็อบบี้ งานทั้งหมด</h1>
     @foreach (var col in Model)
     {
         <form action="/Lobby/jub" method="post" role="form">
@@ -272,26 +272,28 @@
                 <div class="444">
 
                     <div class="col-md-7" style="margin-bottom:2%">
-                        ไอดีโพสต์ :&nbsp;@col.PostID
-                        <input type="hidden" id="111" name="111" value="@col.PostID" />
-                        <div class="Name_Post">
-                            @col.Title
-                        </div>
-                        <div class="jhjhjhjh">
-                            @col.PostDescrip
-                        </div>
-                        <div class="sdqdwer">
-                            รับคน @col.PostMany&nbsp;&nbsp;&nbsp;&nbsp; ประเภทงาน  @col.TypePost&nbsp;&nbsp;&nbsp; ราคา @col.PostMoney บาท
+                        <div class="qqq" style="margin-top:0.9%">
+                            ไอดีโพสต์ :&nbsp;@col.PostID
+                            <input type="hidden" id="111" name="111" value="@col.PostID" />
+                            <div class="Name_Post">
+                                @col.Title
+                            </div>
+                            <div class="jhjhjhjh">
+                                @col.PostDescrip
+                            </div>
+                            <div class="sdqdwer">
+                                รับคน @col.PostMany&nbsp;&nbsp;&nbsp;&nbsp; ประเภทงาน  @col.TypePost&nbsp;&nbsp;&nbsp; ราคา @col.PostMoney บาท
 
+                            </div>
+                            <div class="sdsdkasd">
+                                Deadline @col.DeadlinePost
+                            </div>
+                            <br />
+                            <div class="asdkmjasod">
+                                <input id="Buttonsub" name="mji" type="submit" class="mko" value="เข้าร่วม" />
+                            </div>
+                            <br />
                         </div>
-                        <div class="sdsdkasd">
-                            Deadline @col.DeadlinePost
-                        </div>
-                        <br />
-                        <div class="asdkmjasod">
-                            <input id="Buttonsub" name="mji" type="submit" class="mko" value="เข้าร่วม" />
-                        </div>
-                        <br />
                     </div>
                 </div>
 
