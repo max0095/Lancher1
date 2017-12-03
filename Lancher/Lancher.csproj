@@ -331,6 +331,7 @@
     <Content Include="Models\MyModel.edmx.diagram">
       <DependentUpon>MyModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\Lancher20171202054730 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
